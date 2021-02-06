@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+
+  dashboard:
+    image: ${DOCKER_REGISTRY:-local}/dashbaord:${VERSION:-dev}
+    build:
+      context: .
+      dockerfile: ./dashboard-service/Dockerfile
+      args:
+        COLLECT_STATIC: "True"
+
+  order:
+    image: ${DOCKER_REGISTRY:-local}/order:${VERSION:-dev}
+    build:
+      context: .
+      dockerfile: ./order-service/Dockerfile
+      args:
+        COLLECT_STATIC: "True"
+
+
+  product:
+    image: ${DOCKER_REGISTRY:-local}/product:${VERSION:-dev}
+    build:
+      context: .
+      dockerfile: ./product-service/Dockerfile
+      args:
+        COLLECT_STATIC: "True"
+  
+  invoice:
+    image: ${DOCKER_REGISTRY:-local}/invoice:${VERSION:-dev}
+    build:
+      context: .
+      dockerfile: ./invoice-service/Dockerfile
+      args:
+        COLLECT_STATIC: "True"
+
+  webserver:
+    image: ${DOCKER_REGISTRY:-local}/webserver:${VERSION:-dev}
+    build:
+      context: .
+      dockerfile: ./web-service/Dockerfile
