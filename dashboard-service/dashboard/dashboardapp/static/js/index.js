@@ -16,6 +16,9 @@ function setResultDetails(key){
     else if(key === 'invoice'){
         url = "http://127.0.0.1/invoice/get-all-invoice/";
     }
+    else if(key == 'nodejs'){
+        url = "http://127.0.0.1/help/get-all-help/";
+    }
     if(url) {
         fetch(url)
             .then(response => response.json())

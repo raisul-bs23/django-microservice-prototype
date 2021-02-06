@@ -50,6 +50,12 @@ services:
     volumes:
       - db-local:/invoice-service/invoice/db
 
+  node-service:
+    image: ${DOCKER_REGISTRY:-local}/node-service:${VERSION:-dev}
+    hostname: node-service
+    build:
+      context: .
+      dockerfile: ./node-service/Dockerfile
   webserver:
     image: ${DOCKER_REGISTRY:-local}/webserver:${VERSION:-dev}
     build:

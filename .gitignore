@@ -130,3 +130,4 @@ dmypy.json
 
 local-requirements.txt
 /dashboard-service/api-static/
+/node-service/help-app/node_modules/
