@@ -4,39 +4,60 @@ services:
 
   dashboard:
     image: ${DOCKER_REGISTRY:-local}/dashbaord:${VERSION:-dev}
+    hostname: dashboard
     build:
       context: .
       dockerfile: ./dashboard-service/Dockerfile
       args:
         COLLECT_STATIC: "True"
+    volumes:
+    - db-local:/dashboard-service/dashboard/db/
 
   order:
     image: ${DOCKER_REGISTRY:-local}/order:${VERSION:-dev}
+    hostname: order
     build:
       context: .
       dockerfile: ./order-service/Dockerfile
       args:
         COLLECT_STATIC: "True"
 
+    volumes:
+      - db-local:/order-service/order/db
+
 
   product:
     image: ${DOCKER_REGISTRY:-local}/product:${VERSION:-dev}
+    hostname: product
     build:
       context: .
       dockerfile: ./product-service/Dockerfile
       args:
         COLLECT_STATIC: "True"
+
+    volumes:
+      - db-local:/product-service/product/db/
   
   invoice:
     image: ${DOCKER_REGISTRY:-local}/invoice:${VERSION:-dev}
+    hostname: invoice
     build:
       context: .
       dockerfile: ./invoice-service/Dockerfile
       args:
         COLLECT_STATIC: "True"
 
+    volumes:
+      - db-local:/invoice-service/invoice/db
+
   webserver:
     image: ${DOCKER_REGISTRY:-local}/webserver:${VERSION:-dev}
     build:
       context: .
       dockerfile: ./web-service/Dockerfile
+
+    ports:
+      - 80:80
+
+volumes:
+  db-local:

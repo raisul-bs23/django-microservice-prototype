@@ -8,13 +8,13 @@ $(document).ready(function(){
 function setResultDetails(key){
     var url = ''
     if(key === 'product'){
-        url = "http://localhost:8001/get-products/";
+        url = "http://127.0.0.1/product/get-products/";
     }
     else if(key === 'order'){
-        url = "http://localhost:8002/get-all-order/";
+        url = "http://127.0.0.1/order/get-all-order/";
     }
     else if(key === 'invoice'){
-        url = "http://localhost:8003/get-all-invoice/";
+        url = "http://127.0.0.1/invoice/get-all-invoice/";
     }
     if(url) {
         fetch(url)
