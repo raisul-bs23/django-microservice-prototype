@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 local-requirements.txt
+/dashboard-service/api-static/
