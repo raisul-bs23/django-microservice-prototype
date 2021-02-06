@@ -50,6 +50,15 @@ services:
     volumes:
       - db-local:/invoice-service/invoice/db
 
+  account:
+    image: ${DOCKER_REGISTRY:-local}/account:${VERSION:-dev}
+    hostname: account
+    build:
+      context: .
+      dockerfile: ./account-service/Dockerfile
+
+
+
   webserver:
     image: ${DOCKER_REGISTRY:-local}/webserver:${VERSION:-dev}
     build:
