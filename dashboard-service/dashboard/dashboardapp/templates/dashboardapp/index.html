@@ -1,0 +1,64 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Dashboard</title>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="margin-top: 20%">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card" style="width: 18rem">
+                <img class="card-img-top" src="{% static 'images/product.jpg' %}" width="286px" height="150px" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Product Service</h5>
+                    <p class="card-text">Product Service running on separate service</p>
+                    <a href="javascript:void(0)" class="btn btn-primary action-btn" data-key="product">Check Response</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card" style="width: 18rem">
+                <img class="card-img-top" src="{% static 'images/order.jpg' %}" width="286px" height="150px" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Order Service</h5>
+                    <p class="card-text">Order Service running on separate service</p>
+                    <a href="javascript:void(0)" class="btn btn-primary action-btn" data-key="order">Check Response</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="card" style="width: 18rem">
+                <img class="card-img-top" src="{% static 'images/invoice.png' %}" width="286px" height="150px" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Invoice Service</h5>
+                    <p class="card-text">Invoice Service running on separate service</p>
+                    <a href="javascript:void(0)" class="btn btn-primary action-btn" data-key="invoice">Check Response</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron" style="margin-top: 5%">
+        <div class="show-result">
+            <h4 id="message"></h4>
+            <div id="actual-result"></div>
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="{%static 'js/index.js' %}"></script>
+</body>
+</html>
