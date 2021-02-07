@@ -64,9 +64,15 @@ services:
     build:
       context: .
       dockerfile: ./web-service/Dockerfile
-
     ports:
-      - 80:80
+      - 8000:80
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 500M
+
 
 volumes:
   db-local:
