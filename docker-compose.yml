@@ -58,6 +58,14 @@ services:
       dockerfile: ./account-service/Dockerfile
 
 
+  permission:
+    build:
+      context: .
+      dockerfile: ./permission-service/Dockerfile
+    image: ${DOCKER_REGISTRY:-local}/permission:${VERSION:-dev}
+    hostname: permission
+
+
 
   webserver:
     image: ${DOCKER_REGISTRY:-local}/webserver:${VERSION:-dev}
