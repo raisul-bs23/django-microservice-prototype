@@ -56,7 +56,7 @@ services:
       context: .
       dockerfile: ./web-service/Dockerfile
     ports:
-      - 8000:80
+      - 80:80
 
     deploy:
       resources:
