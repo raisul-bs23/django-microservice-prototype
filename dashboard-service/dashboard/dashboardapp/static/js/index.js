@@ -14,7 +14,7 @@ function setResultDetails(key){
         url = "http://127.0.0.1/order/get-all-order/";
     }
     else if(key === 'invoice'){
-        url = "http://127.0.0.1/invoice/get-all-invoice/";
+        url = "http://127.0.0.1/account/hello/";
     }
     if(url) {
         fetch(url)
